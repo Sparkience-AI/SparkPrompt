@@ -79,6 +79,16 @@ uv run --locked ruff check .
 uv run --locked pytest
 ```
 
+## 🤖 Agent skill
+
+The repository includes an agent-ready SparkPrompt skill at `skills/sparkprompt`. Agents that
+support `SKILL.md` bundles can install or load that folder to evaluate prompts, refine them against
+a stated objective, or create prompt-writing exercises. The skill uses the host agent's model and
+does not require a Gemini API key or call the Streamlit application.
+
+Its evaluation suite covers correct routing, missing context, embedded instruction attacks,
+sensitive data, and destructive-action boundaries.
+
 ## 💡 Contributing
 
 We welcome contributions to Spark Prompt! To contribute:
