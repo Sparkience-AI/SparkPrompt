@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def templates():
     st.title("Prompt Templates")
 

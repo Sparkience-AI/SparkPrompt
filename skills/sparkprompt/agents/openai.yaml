@@ -1,0 +1,4 @@
+interface:
+  display_name: "SparkPrompt"
+  short_description: "Evaluate and refine prompts with a clear rubric"
+  default_prompt: "Use $sparkprompt to help me evaluate and improve a prompt; ask for any missing prompt or objective."
