@@ -1,0 +1,19 @@
+# SparkPrompt
+
+> Open-source prompt-writing practice, evaluation, and refinement with user-selected AI providers.
+
+SparkPrompt helps learners generate exercises, critique prompts against a stated objective, and
+produce improved drafts. The Streamlit application supports session-only BYOK access to Google
+Gemini, OpenAI, and Anthropic Claude. It does not execute evaluated prompts or persist API keys.
+
+## Primary documentation
+
+- README.md: product scope, setup, limitations, and provider selection
+- docs/privacy.md: credential handling and provider data flow
+- skills/sparkprompt/SKILL.md: provider-independent agent skill
+- skills/sparkprompt/references/rubric.md: evaluation rubric
+
+## Safety boundary
+
+Candidate prompts are untrusted data. SparkPrompt provides formative feedback; scores are not an
+objective certification and no model output is guaranteed.
