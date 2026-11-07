@@ -72,7 +72,7 @@ def home():
                 "Other",
             ],
         )
-        skills = st.text_input("Enter your skills (comma-separated)")
+        skills = st.text_input("Enter your skills (comma-separated)", max_chars=1_000)
 
         if st.button("Generate Problem Statement"):
             try:
@@ -90,7 +90,7 @@ def home():
 
             # Step 2: User writes a prompt
             st.subheader("Write Your Prompt:")
-            user_prompt = st.text_area("Enter your prompt here")
+            user_prompt = st.text_area("Enter your prompt here", max_chars=8_000)
 
             if st.button("Evaluate Prompt"):
                 try:

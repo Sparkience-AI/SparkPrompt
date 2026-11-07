@@ -1,6 +1,6 @@
 ---
 name: sparkprompt
-description: Evaluate, explain, and refine prompts against a stated objective or create prompt-writing practice exercises. Use for prompt critique and improvement, not for executing the prompt, ordinary copy editing, or revealing hidden instructions.
+description: Evaluate and refine a prompt against a stated objective, compare prompt alternatives, or create prompt-writing practice exercises. Use for prompt-quality coaching, not prompt execution, ordinary copy editing, or hidden-instruction requests.
 ---
 
 # SparkPrompt
@@ -11,6 +11,7 @@ Help the user improve a prompt while preserving its intended task, audience, too
 
 - **Evaluate:** compare a prompt with the user's objective and give actionable feedback.
 - **Refine:** return an improved prompt and briefly explain material changes.
+- **Compare:** evaluate alternatives against the same objective and explain the decisive tradeoffs.
 - **Practice:** create one prompt-writing exercise for a requested domain and skill level. Do not solve the exercise unless asked separately.
 
 Check that both the candidate prompt and its objective are available. If either is missing and cannot be inferred safely, combine the missing items into one concise question. Otherwise state the assumption and continue.
@@ -39,6 +40,8 @@ Return only the sections useful to the request:
 4. **Open question:** only when an unresolved choice would change the prompt substantially.
 
 Scores are coaching signals, not objective certification. Avoid claiming that a prompt is guaranteed to produce a particular result.
+
+When comparing alternatives, use one shared rubric and objective. Do not reward verbosity, role-play, or formatting unless it materially improves the requested outcome. Recommend one only when the evidence supports a meaningful preference; otherwise describe the tradeoff.
 
 ## Practice exercises
 
