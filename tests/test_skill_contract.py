@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-SKILL_ROOT = Path(__file__).parents[1] / "skills" / "sparkprompt"
+SKILL_ROOT = Path(__file__).parents[1] / ".agents" / "skills" / "sparkprompt"
 
 
 def test_skill_eval_suite_covers_routing_and_risk_cases() -> None:
@@ -20,3 +20,12 @@ def test_skill_bundle_has_required_agent_files() -> None:
     assert (SKILL_ROOT / "SKILL.md").is_file()
     assert (SKILL_ROOT / "agents" / "openai.yaml").is_file()
     assert (SKILL_ROOT / "references" / "rubric.md").is_file()
+
+
+def test_skill_frontmatter_and_interface_are_discoverable() -> None:
+    skill = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
+    interface = (SKILL_ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
+
+    assert skill.startswith("---\nname: sparkprompt\ndescription:")
+    assert "default_prompt:" in interface
+    assert "$sparkprompt" in interface

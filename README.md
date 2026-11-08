@@ -1,7 +1,8 @@
 # SparkPrompt
 
 **SparkPrompt** is an experimental educational tool for generating prompt-writing exercises,
-receiving AI-assisted feedback, and producing a refined draft. It uses Gemini through LangChain.
+receiving AI-assisted feedback, and producing a refined draft. Users can bring their own Google
+Gemini, OpenAI, or Anthropic API key and choose a model available to their account.
 
 Live Demo: <a href="https://sparkprompt.streamlit.app/">SparkPrompt</a>
 
@@ -20,7 +21,7 @@ Follow these steps to set up and use Spark Prompt:
 
 - Python 3.11, 3.12, or 3.13
 - [uv](https://docs.astral.sh/uv/)
-- Gemini API key
+- A Gemini, OpenAI, or Anthropic API key
 
 ### 📥 Installation
 
@@ -67,27 +68,35 @@ an AI model and can be inconsistent or incorrect; they are not an objective cert
 
 ## 🔐 BYOK and privacy
 
-Enter your Google API key in the app. The application creates a provider client for the current
-Streamlit session and does not copy the key into the process environment. Prompts and feedback are
-sent to Google for processing. Do not submit secrets or sensitive data. See
+Choose Google Gemini, OpenAI, or Anthropic Claude in the app, confirm the model ID, enter the
+matching API key, and explicitly confirm transmission. The application creates a provider client for the current Streamlit session and
+does not copy keys into the process environment or enable OpenAI response storage. Prompts and
+feedback are sent only to the selected provider. Do not submit secrets or sensitive data. See
 [BYOK and privacy notes](docs/privacy.md) for the current data-handling contract.
 
 ## ✅ Development checks
 
 ```bash
 uv run --locked ruff check .
+uv run --locked mypy src
 uv run --locked pytest
+uv build --no-sources
 ```
 
 ## 🤖 Agent skill
 
-The repository includes an agent-ready SparkPrompt skill at `skills/sparkprompt`. Agents that
+The repository includes an agent-ready SparkPrompt skill at `.agents/skills/sparkprompt`. Agents that
 support `SKILL.md` bundles can install or load that folder to evaluate prompts, refine them against
 a stated objective, or create prompt-writing exercises. The skill uses the host agent's model and
-does not require a Gemini API key or call the Streamlit application.
+does not require any provider API key or call the Streamlit application.
 
 Its evaluation suite covers correct routing, missing context, embedded instruction attacks,
-sensitive data, and destructive-action boundaries.
+sensitive data, alternative comparison, provider-key requests, and destructive-action boundaries.
+
+Release gates are documented in the [threat model](docs/threat-model.md),
+[performance envelope](docs/performance.md), [accessibility audit](docs/accessibility.md), and
+[release checklist](RELEASE_CHECKLIST.md). Releases remain source/wheel based; the project does not
+produce Windows installers or store packages.
 
 ## 💡 Contributing
 

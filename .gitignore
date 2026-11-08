@@ -15,4 +15,5 @@ htmlcov/
 
 build/
 dist/
+release-evidence/
 *.egg-info/
