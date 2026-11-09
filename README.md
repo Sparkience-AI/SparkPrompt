@@ -4,6 +4,9 @@
 receiving AI-assisted feedback, and producing a refined draft. Users can bring their own Google
 Gemini, OpenAI, or Anthropic API key and choose a model available to their account.
 
+The Templates page provides concrete, provider-independent scaffolds for general AI tasks, data
+analysis, web features, and machine-learning experiments.
+
 Live Demo: <a href="https://sparkprompt.streamlit.app/">SparkPrompt</a>
 
 ## 🌟 Features
@@ -54,6 +57,10 @@ Follow these steps to set up and use Spark Prompt:
    ```
 
 2. **Access the Tool**: Open your web browser and go to [http://localhost:8501](http://localhost:8501) to start using Spark Prompt.
+
+The Python wheel contains the reusable `sparkprompt` service, provider, prompt, and template
+modules. The Streamlit UI (`app.py`, `pages/`, and `style.css`) is intentionally run from a source
+checkout and is not a standalone installed application.
 
 ### 📋 How It Works
 

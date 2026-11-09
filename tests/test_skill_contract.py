@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 SKILL_ROOT = Path(__file__).parents[1] / ".agents" / "skills" / "sparkprompt"
+LLMS_SOURCE = (Path(__file__).parents[1] / "llms.txt").read_text(encoding="utf-8")
 
 
 def test_skill_eval_suite_covers_routing_and_risk_cases() -> None:
@@ -29,3 +30,9 @@ def test_skill_frontmatter_and_interface_are_discoverable() -> None:
     assert skill.startswith("---\nname: sparkprompt\ndescription:")
     assert "default_prompt:" in interface
     assert "$sparkprompt" in interface
+
+
+def test_discovery_metadata_points_to_shipped_skill_files() -> None:
+    assert ".agents/skills/sparkprompt/SKILL.md" in LLMS_SOURCE
+    assert ".agents/skills/sparkprompt/references/rubric.md" in LLMS_SOURCE
+    assert "skills/sparkprompt/" not in LLMS_SOURCE.replace(".agents/skills/sparkprompt/", "")
