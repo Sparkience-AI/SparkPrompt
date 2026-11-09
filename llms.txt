@@ -10,8 +10,8 @@ Gemini, OpenAI, and Anthropic Claude. It does not execute evaluated prompts or p
 
 - README.md: product scope, setup, limitations, and provider selection
 - docs/privacy.md: credential handling and provider data flow
-- skills/sparkprompt/SKILL.md: provider-independent agent skill
-- skills/sparkprompt/references/rubric.md: evaluation rubric
+- .agents/skills/sparkprompt/SKILL.md: provider-independent agent skill
+- .agents/skills/sparkprompt/references/rubric.md: evaluation rubric
 
 ## Safety boundary
 

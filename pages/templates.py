@@ -1,18 +1,16 @@
 import streamlit as st
 
+from sparkprompt.templates import PROMPT_TEMPLATES
+
 
 def templates():
     st.title("Prompt Templates")
+    st.caption(
+        "Use these provider-independent scaffolds as starting points. "
+        "Replace every angle-bracketed field and remove sections that do not apply."
+    )
 
-    with st.expander("AI Prompt Template"):
-        st.write("### AI Prompt Template")
-        st.write("This is a sample AI prompt template.")
-    with st.expander("Data Science Prompt Template"):
-        st.write("### Data Science Prompt Template")
-        st.write("This is a sample Data Science prompt template.")
-    with st.expander("Web Development Prompt Template"):
-        st.write("### Web Development Prompt Template")
-        st.write("This is a sample Web Development prompt template.")
-    with st.expander("Machine Learning Prompt Template"):
-        st.write("### Machine Learning Prompt Template")
-        st.write("This is a sample Machine Learning prompt template.")
+    for prompt_template in PROMPT_TEMPLATES:
+        with st.expander(prompt_template.title):
+            st.write(prompt_template.purpose)
+            st.code(prompt_template.body, language="text")

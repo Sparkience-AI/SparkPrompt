@@ -3,6 +3,7 @@ __pycache__/
 *$py.class
 
 .venv/
+.uv-cache/
 .pytest_cache/
 .ruff_cache/
 .coverage
