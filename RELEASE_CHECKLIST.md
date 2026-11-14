@@ -6,7 +6,7 @@
 - [ ] Clean environment installs the wheel and a source checkout launches Streamlit.
 - [ ] Keyboard, screen-reader labels, focus order, contrast, zoom, and narrow viewport checks are recorded.
 - [ ] Performance envelope and provider-call count are unchanged or an intentional change is documented.
-- [ ] `scripts/release_evidence.py` generates checksums, CycloneDX SBOM, and provenance for the exact source commit.
+- [ ] The manual `Release evidence` workflow passes for version `0.1.0` and retains checksums, an artifact-installed CycloneDX SBOM, a release manifest, and GitHub provenance/SBOM attestations for the exact source commit.
 - [ ] Release notes state formative-scoring, provider-retention, hosted-demo, privacy, and rollback limitations.
 - [ ] Rollback is rehearsed by reinstalling the previous wheel and lockfile.
 
